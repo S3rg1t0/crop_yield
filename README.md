@@ -22,7 +22,9 @@ The dataset includes the following features:
 ### Usability:
 This dataset is useful for various applications, including:
 
-### Uses:
-Machine Learning: Train regression models to predict crop yield based on the input features.
-Predictive Analytics: Build models to estimate the potential yield based on weather forecasts, farm characteristics, and farming practices.
-Data Science Projects: Practice data preprocessing, feature engineering, and model evaluation in the agricultural domain.
+* Machine Learning: Train regression models to predict crop yield based on the input features.
+* Predictive Analytics: Build models to estimate the potential yield based on weather forecasts, farm characteristics, and farming practices.
+* Data Science Projects: Practice data preprocessing, feature engineering, and model evaluation in the agricultural domain.
+
+### Font:
+https://www.kaggle.com/datasets/govindaramsriram/crop-yield-of-a-farm
