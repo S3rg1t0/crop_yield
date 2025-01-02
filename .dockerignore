@@ -1,0 +1,9 @@
+logs
+venv
+crop_yield_data.csv
+.gitignore
+Dockerfile
+model_train_regression.ipynb
+model_train.ipynb
+README.md
+view.ipynb
