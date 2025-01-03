@@ -1,0 +1,5 @@
+flask
+numpy
+joblib
+onnxruntime
+scikit-learn

@@ -6,9 +6,6 @@ import joblib
 app = Flask(__name__)
 
 session = ort.InferenceSession("model.onnx")
-labelEncoder1 = joblib.load("labelEncoder1.pkl")
-labelEncoder3 = joblib.load("labelEncoder3.pkl")
-
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -16,9 +13,9 @@ def predict():
 
     try:
         data_input = [data['rainfall_mm'],
-                      int(labelEncoder1.transform([data['soil_quality_index']])[0]),
+                      data['soil_quality_index'],
                       data['farm_size_hectares'],
-                      int(labelEncoder3.transform([data['sunlight_hours']])[0]),
+                      data['sunlight_hours'],
                       data['fertilizer_kg']]
         data_input = np.array([data_input], dtype=np.float32)
         input_name = session.get_inputs()[0].name
