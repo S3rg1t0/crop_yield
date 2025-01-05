@@ -6,6 +6,7 @@ import joblib
 app = Flask(__name__)
 
 session = ort.InferenceSession("model.onnx")
+scaler = joblib.load("scaler.pkl")
 
 @app.route("/predict", methods=["POST"])
 def predict():
@@ -18,9 +19,10 @@ def predict():
                       data['sunlight_hours'],
                       data['fertilizer_kg']]
         data_input = np.array([data_input], dtype=np.float32)
+        data_input_scaled = scaler.transform(data_input)
         input_name = session.get_inputs()[0].name
 
-        pred_onnx = session.run(None, {input_name: data_input})
+        pred_onnx = session.run(None, {input_name: data_input_scaled})
 
         return jsonify({'prediction': pred_onnx[0].tolist()}), 200
 
@@ -31,4 +33,4 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)

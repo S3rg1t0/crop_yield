@@ -6,6 +6,8 @@ COPY requirements.txt /app/
 COPY model.onnx /app/
 COPY main.py /app/
 
+EXPOSE 5000
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . /app/
