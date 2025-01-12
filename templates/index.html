@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crop yield model</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    <header>
+        <h1>CROP YIELD</h1>
+    </header>
+
+    <form action="/predict" method="post">
+        <ul>
+             <li>
+                <label for="rainfall_mm">Rainfall (mm):</label>
+                <input type="number" id="rainfall_mm" name="rainfall_mm">
+            </li>
+            <li>
+                <label for="soil_quality_index">Soil quality index:</label>
+                <input type="number" id="soil_quality_index" name="soil_quality_index">
+            </li>
+            <li>
+                <label for="farm_size_hectares">Farm size (Ha):</label>
+                <input type="number" id="farm_size_hectares" name="farm_size_hectares">
+            </li>
+            <li>
+                <label for="sunlight_hours">Sunlight hours:</label>
+                <input type="number" id="sunlight_hours" name="sunlight_hours">
+            </li>
+            <li>
+                <label for="fertilizer_kg">Fertilizer (kg):</label>
+                <input type="number" id="fertilizer_kg" name="fertilizer_kg">
+            </li>
+            <li class="button">
+              <button type="submit">Predict</button>
+            </li>
+        </ul>
+
+    </form>
+
+    <footer>
+        <p>&copy; 2025 Sergio Alonso</p>
+    </footer>
+
+</body>
+</html>
